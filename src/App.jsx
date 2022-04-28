@@ -1,6 +1,7 @@
 import {
   asyncGetQuotes,
-  thenGetQuotes
+  thenGetQuotes,
+  asyncTryCatch
 } from './services/promise-me.js';
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
     <h1>Promises</h1>
       <button onClick={() => handleClick(asyncGetQuotes)}>asyncGetQuotes</button>
       <button onClick={() => handleClick(thenGetQuotes)}>thenGetQuotes</button>
+      <button onClick={() => handleClick(asyncTryCatch)}>thenGetQuotes</button>
     </>
   );
 }

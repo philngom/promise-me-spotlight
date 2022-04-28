@@ -32,14 +32,14 @@ export async function thenGetQuotes() {
 
 export async function asyncTryCatch() {
   try {
-    const res = await fetch('https://futuramapi.herokuapp.com/api/quotes/1');
+    const res = await fetch('https://futuramaapi.herokuapp.com/api/quotes/1');
     const data = await res.json();
     return {
       character: data[0].character,
       quote: data[0].quote
     }
   } catch (error) {
-    error.message('There was an error with your request.')
+    console.error('There was an error with your request.')
   }
 }
 
