@@ -47,6 +47,18 @@ export async function asyncTryCatch() {
  * TODO: Exercise 4: use `fetch`, `.then`, and `.catch` to get the same data from exercise 3 while handling errors
  */
 
+export async function thenCatch() {
+  const result = await fetch('https://futuramaapi.herokuapp.com/api/quotes/1')
+  .then((res) => res.json())
+  .then((data) => ({
+      character: data[0].character,
+      quote: data[0].quote
+  }))
+  .catch((error) => console.error('There was an error with your request.'));
+
+  return result;
+}
+
 /**
  * TODO: Exercise 5: use `fetch`, async/await, and a try/catch/finally statement to get data from an API, handle errors, then console.log('All done!') upon completion
  */
