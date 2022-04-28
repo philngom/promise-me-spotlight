@@ -30,6 +30,19 @@ export async function thenGetQuotes() {
  * TODO: Exercise 3: use `fetch`, async/await, and a try/catch statement to get data from an API and handle errors
  */
 
+export async function asyncTryCatch() {
+  try {
+    const res = await fetch('https://futuramapi.herokuapp.com/api/quotes/1');
+    const data = await res.json();
+    return {
+      character: data[0].character,
+      quote: data[0].quote
+    }
+  } catch (error) {
+    error.message('There was an error with your request.')
+  }
+}
+
 /**
  * TODO: Exercise 4: use `fetch`, `.then`, and `.catch` to get the same data from exercise 3 while handling errors
  */
